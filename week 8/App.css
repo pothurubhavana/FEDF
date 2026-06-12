@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Real weather app style */
+  background: linear-gradient(
+    to bottom,
+    #4facfe 0%,
+    #7dcfff 40%,
+    #dff6ff 100%
+  );
+}
+
+.weather-container {
+  width: 420px;
+  background: white;
+  border-radius: 25px;
+  padding: 30px;
+  text-align: center;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.weather-icon {
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+.weather-container h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.weather-container h3 {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.weather-container p {
+  background: #f4f8fc;
+  margin: 12px 0;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 17px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.weather-container p:hover {
+  background: #e8f4ff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.refresh-btn,
+.weekly-btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.refresh-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.refresh-btn:hover {
+  background: #1976d2;
+}
+
+.weekly-btn {
+  background: #34a853;
+  color: white;
+}
+
+.weekly-btn:hover {
+  background: #2d8e49;
+}
+
+@media (max-width: 500px) {
+  .weather-container {
+    width: 90%;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+}
