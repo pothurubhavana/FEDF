@@ -1,0 +1,563 @@
+
+
+/* =============================================
+   App.css — Library Management System
+   Week 9 | React + Vite
+   Professional & Corporate Theme
+   ============================================= */
+
+/* ---------- Reset & Base ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  background-color: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+}
+
+/* ---------- App Shell ---------- */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  background-color: #185FA5;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 100;
+}
+
+.sidebar-header {
+  padding: 24px 16px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sidebar-header .app-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.sidebar-header .app-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.sidebar-nav {
+  padding: 16px 8px;
+  flex: 1;
+}
+
+.nav-section-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.38);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 10px 10px 4px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  margin-bottom: 2px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.nav-item.active {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* ---------- Main Content ---------- */
+.main-content {
+  margin-left: 220px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---------- Top Bar ---------- */
+.topbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e6ea;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.topbar-info .page-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.topbar-info .page-subtitle {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 2px;
+}
+
+/* ---------- Page Content ---------- */
+.page-content {
+  padding: 24px 28px;
+  flex: 1;
+}
+
+/* ---------- Home Page ---------- */
+.home-hero {
+  background-color: #ffffff;
+  border: 1px solid #e2e6ea;
+  border-radius: 10px;
+  padding: 40px 32px;
+  max-width: 600px;
+}
+
+.home-hero h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #185FA5;
+  margin-bottom: 8px;
+}
+
+.home-hero h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #6c757d;
+}
+
+/* ---------- Form Panel ---------- */
+.form-panel {
+  background-color: #ffffff;
+  border: 1px solid #e2e6ea;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.form-panel-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-panel-heading::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background-color: #185FA5;
+  border-radius: 2px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-group input[type="text"] {
+  padding: 9px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #1a1a2e;
+  background-color: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #185FA5;
+  box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.12);
+}
+
+.form-group input[type="text"]::placeholder {
+  color: #adb5bd;
+}
+
+/* ---------- Buttons ---------- */
+.btn-primary {
+  padding: 9px 18px;
+  background-color: #185FA5;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: #0C447C;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-ghost {
+  padding: 8px 14px;
+  background-color: transparent;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #6c757d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-ghost:hover {
+  background-color: #f0f2f5;
+  color: #1a1a2e;
+}
+
+.btn-edit {
+  padding: 5px 12px;
+  background-color: transparent;
+  border: 1px solid #185FA5;
+  color: #185FA5;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-edit:hover {
+  background-color: #E6F1FB;
+}
+
+.btn-delete {
+  padding: 5px 12px;
+  background-color: transparent;
+  border: 1px solid #A32D2D;
+  color: #A32D2D;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-delete:hover {
+  background-color: #FCEBEB;
+}
+
+/* ---------- Table Panel ---------- */
+.table-panel {
+  background-color: #ffffff;
+  border: 1px solid #e2e6ea;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table-toolbar {
+  padding: 12px 20px;
+  border-bottom: 1px solid #e2e6ea;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper input[type="text"] {
+  padding: 7px 12px 7px 34px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #1a1a2e;
+  background-color: #f8f9fa;
+  width: 220px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-wrapper input[type="text"]:focus {
+  border-color: #185FA5;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(24, 95, 165, 0.10);
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #adb5bd;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* ---------- Table ---------- */
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.book-table thead tr {
+  background-color: #f8f9fa;
+}
+
+.book-table thead th {
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6c757d;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid #e2e6ea;
+}
+
+.book-table tbody tr {
+  border-bottom: 1px solid #f0f2f5;
+  transition: background-color 0.1s ease;
+}
+
+.book-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.book-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.book-table tbody td {
+  padding: 11px 20px;
+  font-size: 13px;
+  color: #1a1a2e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.book-table tbody td.td-author {
+  color: #6c757d;
+}
+
+/* ---------- ISBN Badge ---------- */
+.isbn-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: #E6F1FB;
+  color: #0C447C;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* ---------- Table Footer ---------- */
+.table-footer {
+  padding: 10px 20px;
+  border-top: 1px solid #e2e6ea;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table-footer-text {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* ---------- Success Message ---------- */
+.success-message {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background-color: #d1f0e0;
+  color: #0f6e56;
+  border-left: 4px solid #1D9E75;
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ---------- Empty State ---------- */
+.empty-state {
+  text-align: center;
+  padding: 32px 20px;
+  color: #adb5bd;
+  font-size: 13px;
+}
+
+/* ---------- Links ---------- */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Popup Overlay ---------- */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px 28px;
+  width: 340px;
+  text-align: center;
+  border: 1px solid #e2e6ea;
+}
+
+.popup-icon {
+  width: 52px;
+  height: 52px;
+  background-color: #d1f0e0;
+  color: #0f6e56;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.popup-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 14px;
+}
+
+.popup-detail {
+  font-size: 13px;
+  color: #6c757d;
+  margin-bottom: 6px;
+  text-align: left;
+  padding: 0 8px;
+}
+
+.popup-detail span {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+
+.popup-close-btn {
+  margin-top: 20px;
+  padding: 9px 32px;
+  background-color: #185FA5;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.popup-close-btn:hover {
+  background-color: #0C447C;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+    min-width: 60px;
+  }
+
+  .sidebar-header .app-label,
+  .sidebar-header .app-name,
+  .nav-section-label,
+  .nav-item span {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .main-content {
+    margin-left: 60px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .search-wrapper input[type="text"] {
+    width: 150px;
+  }
+
+  .popup-box {
+    width: 90%;
+    padding: 24px 18px;
+  }
+}
